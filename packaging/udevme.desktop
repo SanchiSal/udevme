@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=udevme
+GenericName=udev Rule Manager
+Comment=Manage udev rules for WebHID and hidraw device access
+Exec=udevme
+Icon=udevme
+Terminal=false
+Categories=System;Settings;HardwareSettings;
+Keywords=udev;usb;hid;webhid;hidraw;device;permissions;
+StartupNotify=true

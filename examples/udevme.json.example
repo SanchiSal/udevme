@@ -1,0 +1,73 @@
+{
+    "schema_version": 1,
+    "rules": [
+        {
+            "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+            "devices": [
+                {
+                    "vid": "1234",
+                    "pid": "5678",
+                    "name": "Example HID Controller",
+                    "manufacturer": "Example Corp",
+                    "has_hidraw": true,
+                    "has_usb": true
+                }
+            ],
+            "applications": [
+                {
+                    "desktop_id": "brave-browser.desktop",
+                    "name": "Brave",
+                    "exec": "/usr/bin/brave",
+                    "icon": "brave"
+                }
+            ],
+            "permission_level": "Open",
+            "rule_types": {
+                "hidraw": true,
+                "usb": false,
+                "uaccess": true,
+                "seat": true
+            },
+            "enabled": true,
+            "created_at": "2025-01-20T12:00:00Z",
+            "updated_at": "2025-01-20T12:00:00Z"
+        },
+        {
+            "id": "deadbeef-cafe-babe-1234-567890abcdef",
+            "devices": [
+                {
+                    "vid": "abcd",
+                    "pid": "ef01",
+                    "name": "Game Controller Pro",
+                    "manufacturer": "Gaming Inc",
+                    "has_hidraw": true,
+                    "has_usb": true
+                }
+            ],
+            "applications": [
+                {
+                    "desktop_id": "google-chrome.desktop",
+                    "name": "Google Chrome",
+                    "exec": "/usr/bin/google-chrome-stable",
+                    "icon": "google-chrome"
+                }
+            ],
+            "permission_level": "Open",
+            "rule_types": {
+                "hidraw": true,
+                "usb": false,
+                "uaccess": true,
+                "seat": true
+            },
+            "enabled": true,
+            "created_at": "2025-01-20T12:30:00Z",
+            "updated_at": "2025-01-20T12:30:00Z"
+        }
+    ],
+    "sync_info": {
+        "rules_file_hash_at_load": "abc123...",
+        "last_synced_from_rules_at": "2025-01-20T12:30:00Z",
+        "last_applied_at": "2025-01-20T12:30:00Z",
+        "rules_file_hash_after_apply": "abc123..."
+    }
+}

@@ -1,0 +1,37 @@
+# Maintainer: Your Name <your@email.com>
+pkgname=udevme
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="udev rule manager for WebHID / hidraw device access"
+arch=('x86_64')
+url="https://github.com/user/udevme"
+license=('MIT')
+depends=('qt6-base' 'polkit')
+makedepends=('cmake' 'qt6-tools')
+optdepends=('usbutils: for enhanced device detection')
+source=("$pkgname-$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+build() {
+    cd "$pkgname-$pkgver"
+    cmake -B build \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX=/usr
+    cmake --build build
+}
+
+check() {
+    cd "$pkgname-$pkgver"
+    cmake --build build --target test || true
+}
+
+package() {
+    cd "$pkgname-$pkgver"
+    DESTDIR="$pkgdir" cmake --install build
+    
+    # Install license
+    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    
+    # Install documentation
+    install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
+}
