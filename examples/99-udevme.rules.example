@@ -5,11 +5,11 @@
 # File format version: 1
 # schema_version=1
 
-# udevme: id=a1b2c3d4-e5f6-7890-abcd-ef1234567890 devices=1234:5678 apps=brave-browser.desktop level=Open types=hidraw,uaccess,seat enabled=true
-KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1234", ATTRS{idProduct}=="5678", MODE="0666", TAG+="uaccess", TAG+="seat"
+# udevme: id=a1b2c3d4-e5f6-7890-abcd-ef1234567890 devices=1234:5678 apps=brave-browser.desktop level=Open types=hidraw,uaccess enabled=true
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1234", ATTRS{idProduct}=="5678", TAG+="uaccess"
 
-# udevme: id=deadbeef-cafe-babe-1234-567890abcdef devices=abcd:ef01 apps=google-chrome.desktop level=Open types=hidraw,uaccess,seat enabled=true
-KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="abcd", ATTRS{idProduct}=="ef01", MODE="0666", TAG+="uaccess", TAG+="seat"
+# udevme: id=deadbeef-cafe-babe-1234-567890abcdef devices=abcd:ef01 apps=google-chrome.desktop level=Open types=hidraw,uaccess enabled=true
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="abcd", ATTRS{idProduct}=="ef01", TAG+="uaccess"
 
 # Notes for rules are stored separately in ~/.local/bin/udevme/notes.json
 # End of udevme rules

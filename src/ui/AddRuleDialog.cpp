@@ -82,10 +82,9 @@ void AddRuleDialog::setupUi() {
     m_warningLabel = new QLabel(this);
     m_warningLabel->setWordWrap(true);
     m_warningLabel->setText(
-        "<b>How it works:</b> This will create a udev rule to grant access to the selected device(s) "
-        "for WebHID in browsers like Chrome, Brave, etc.<br>"
-        "<b>Note:</b> udev rules apply system-wide. The app selection above is just a reminder for you "
-        "to remember why you created this rule - it doesn't restrict access to that app only."
+        "<b>How it works:</b> This creates a udev rule with <code>TAG+=\"uaccess\"</code> which grants "
+        "the logged-in user access to the device for WebHID in browsers.<br>"
+        "<b>Note:</b> The app selection above is just a reminder for you - udev rules apply system-wide."
     );
     mainLayout->addWidget(m_warningLabel);
     
@@ -273,11 +272,11 @@ UdevRule AddRuleDialog::getRule() const {
     // Get notes
     rule.notes = m_notesEdit->toPlainText().trimmed();
     
-    // Use standard WebHID settings
+    // Use standard WebHID settings - uaccess only
     rule.permissionLevel = PermissionLevel::Open;
     rule.ruleTypes.hidraw = true;
     rule.ruleTypes.usb = false;
-    rule.ruleTypes.seat = true;
+    rule.ruleTypes.seat = false;
     rule.ruleTypes.uaccess = true;
     
     return rule;
