@@ -43,8 +43,11 @@ QString RuleGenerator::generateMetadataComment(const UdevRule& rule) {
 
 QString RuleGenerator::generatePermissionPart(const UdevRule& rule) {
     Q_UNUSED(rule);
-    // Standard WebHID permissions - MODE 0666 + uaccess + seat for maximum compatibility
-    return "MODE=\"0666\", TAG+=\"uaccess\", TAG+=\"seat\"";
+    // MODE="0666" is needed for WebHID because browsers run sandboxed
+    // and may not inherit uaccess ACL permissions.
+    // WebHID has its own permission model (user must grant access in browser)
+    // so this is safe in practice.
+    return "MODE=\"0666\"";
 }
 
 QString RuleGenerator::generateSingleRule(const UdevRule& rule) {

@@ -62,10 +62,10 @@ To edit an existing rule, double-click it or select it and click **Edit Rule**.
 udevme creates rules in `/etc/udev/rules.d/99-udevme.rules` with the format:
 
 ```
-KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1234", ATTRS{idProduct}=="5678", MODE="0666", TAG+="uaccess", TAG+="seat"
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1234", ATTRS{idProduct}=="5678", MODE="0666"
 ```
 
-This grants access to the hidraw device for WebHID in browsers.
+`MODE="0666"` is used because browsers run sandboxed and may not inherit ACL-based permissions like `uaccess`. WebHID has its own permission model where the user must grant access in the browser, so this is safe in practice.
 
 ## File Locations
 
