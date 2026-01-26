@@ -62,10 +62,10 @@ To edit an existing rule, double-click it or select it and click **Edit Rule**.
 udevme creates rules in `/etc/udev/rules.d/99-udevme.rules` with the format:
 
 ```
-KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1234", ATTRS{idProduct}=="5678", TAG+="uaccess"
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1234", ATTRS{idProduct}=="5678", MODE="0666", TAG+="uaccess", TAG+="seat"
 ```
 
-The `uaccess` tag grants access to the logged-in user via ACLs, which is the recommended approach for single-user desktops.
+This grants access to the hidraw device for WebHID in browsers.
 
 ## File Locations
 

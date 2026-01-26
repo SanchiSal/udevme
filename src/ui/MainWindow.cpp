@@ -394,12 +394,15 @@ void MainWindow::applyRulesAsync() {
 void MainWindow::onAbout() {
     QMessageBox::about(this, "About udevme",
         "<h3>udevme</h3>"
-        "<p>Version 1.0.1</p>"
+        "<p>Version 1.0.0</p>"
         "<p>A udev rule manager for WebHID / hidraw device access.</p>"
         "<p>This tool helps you create and manage udev rules so that browsers "
         "(Brave, Chrome, Chromium, etc.) can access HID devices via WebHID.</p>"
         "<hr>"
-        "<p>Created by Sanchi with AI assistance.</p>"
+        "<p><b>Important Security Note:</b></p>"
+        "<p>udev rules cannot truly restrict device access to a single application. "
+        "The app selection in rules is for organization purposes only. "
+        "Permissions are applied at the device node level and affect all applications.</p>"
         "<hr>"
         "<p>Config location: ~/.local/bin/udevme/</p>"
         "<p>System rules: /etc/udev/rules.d/99-udevme.rules</p>");

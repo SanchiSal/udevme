@@ -1,10 +1,10 @@
-# Maintainer: Sanchi
+# Maintainer: Your Name <your@email.com>
 pkgname=udevme
-pkgver=1.0.1
+pkgver=1.0.0
 pkgrel=1
 pkgdesc="udev rule manager for WebHID / hidraw device access"
 arch=('x86_64')
-url="https://github.com/SanchiSal/udevme"
+url="https://github.com/user/udevme"
 license=('MIT')
 depends=('qt6-base' 'polkit')
 makedepends=('cmake' 'qt6-tools')

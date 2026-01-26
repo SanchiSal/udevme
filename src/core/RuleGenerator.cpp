@@ -43,9 +43,8 @@ QString RuleGenerator::generateMetadataComment(const UdevRule& rule) {
 
 QString RuleGenerator::generatePermissionPart(const UdevRule& rule) {
     Q_UNUSED(rule);
-    // Use uaccess tag only - grants access to logged-in user via ACLs
-    // This is cleaner and more secure than MODE="0666"
-    return "TAG+=\"uaccess\"";
+    // Standard WebHID permissions - MODE 0666 + uaccess + seat for maximum compatibility
+    return "MODE=\"0666\", TAG+=\"uaccess\", TAG+=\"seat\"";
 }
 
 QString RuleGenerator::generateSingleRule(const UdevRule& rule) {
