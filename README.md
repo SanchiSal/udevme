@@ -27,8 +27,8 @@ sudo pacman -S base-devel cmake qt6-base
 ### Build and Install
 
 ```bash
-# Extract
-tar -xzf udevme-1.0.0.tar.gz
+# Clone or extract
+git clone https://github.com/SanchiSal/udevme.git
 cd udevme
 
 # Build
@@ -97,6 +97,10 @@ ls -l /dev/hidraw*
 1. Ensure WebHID is enabled in your browser
 2. Check `chrome://device-log` for errors
 3. Try restarting the browser after applying rules
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for version history.
 
 ## License
 
