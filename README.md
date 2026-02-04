@@ -2,6 +2,8 @@
 
 A Qt 6 desktop application for managing udev rules for WebHID / hidraw device access in browsers (Brave, Chrome, Chromium, etc.).
 
+Want to use your Gaming Mouse or Keyboards Web Utility but it doesn't load? This fixes that.
+
 ![udevme](resources/udevme_icon.png)
 
 ## About
